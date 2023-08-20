@@ -10,7 +10,7 @@
 `docker run --hostname nodeapp3 --name nodeapp3 -d nodeapp`
 
 # Proxy
-### Layer 7
+#### Layer 7
 
 `docker run --hostname ng1 --name ng1 -p 80:8080 -v $(pwd)/nginx.conf:/etc/nginx/nginx.conf -d nginx`
 
@@ -24,6 +24,10 @@
 `docker network connect backendnet nodeapp3`
 
 `docker network connect backendnet nginx`
+#### Layer 4
+
+`docker run --hostname ng1 --name ng1 -p 80:8080 -v $(pwd)/tcp.conf:/etc/nginx/nginx.conf -d nginx`
+
 
 ### Add SSL Certificate
 [TODO]
